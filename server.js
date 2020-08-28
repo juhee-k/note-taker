@@ -2,8 +2,7 @@ const express = require("express");
 const path = require("path");
 const db = require("./db/db.json");
 const fs = require("fs")
-// const apiRoutes = require("./routes/apiRoutes");
-// const htmlRoutes = require("./require/htmlRoutes");
+
 
 //Initialize the app and create a port
 const app = express();
@@ -17,7 +16,7 @@ app.use(express.static("public"));
 app.get("/notes", function(req, res){
     res.sendFile(path.join(__dirname, "public/notes.html"))
 })
-// app.use("/api", apiRoutes);
+
 //API route for data
 app.get("/api/notes", function(req,res){
     res.json(db)
