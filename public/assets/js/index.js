@@ -126,9 +126,8 @@ const renderNoteList = (notes) => {
   if (notes.length === 0) {
     noteListItems.push(create$li("No saved Notes", false));
   }
-
-  notes.forEach((note) => {
-    const $li = create$li(note.title).data(note);
+  notes.forEach((note,i) => {
+    const $li = create$li(note.title).data({...note,id:i});
     noteListItems.push($li);
   });
 
